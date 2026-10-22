@@ -1,0 +1,101 @@
+:root {
+  --font-sans: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  /* Midnight Research Studio Palette (Matching Reference UI) */
+  --bg-core: #0E1320;
+  --bg-surface: #161D2E;
+  --bg-card: #161D2E;
+  --bg-card-hover: #1F2840;
+  --bg-glass: rgba(22, 29, 46, 0.88);
+  --border-glass: #26304A;
+  --border-glass-active: #4FD1B5;
+  --border-subtle: #26304A;
+
+  /* Minimal Purposeful Accents */
+  --accent-gold: #F2B84B;
+  --accent-teal: #4FD1B5;
+  --accent-coral: #FF7A6B;
+  --accent-violet: #9B8CFF;
+  --accent-sky: #6CB6FF;
+  --accent-tan: #C9A46B;
+
+  /* Semantic mapping for compatibility */
+  --neon-cyan: #4FD1B5;
+  --neon-blue: #6CB6FF;
+  --neon-purple: #9B8CFF;
+  --neon-violet: #818cf8;
+  --neon-emerald: #4FD1B5;
+  --neon-amber: #F2B84B;
+  --neon-rose: #FF7A6B;
+
+  /* Typography Colors */
+  --text-primary: #E8ECF4;
+  --text-secondary: #9AA6BD;
+  --text-muted: #64748B;
+  --text-glow-cyan: 0 0 12px rgba(79, 209, 181, 0.25);
+
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--bg-core);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background-color: var(--bg-core);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(38, 48, 74, 0.35), transparent 70%),
+    linear-gradient(180deg, #0E1320 0%, #111726 100%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  color: #070a12;
+  background: var(--neon-cyan);
+}
+
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(7, 10, 18, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.22);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.45);
+}

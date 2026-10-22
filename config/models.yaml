@@ -1,0 +1,57 @@
+# Role to model map (HLD section 12).
+#
+# Never hardcode model ids in code. Roles are tiers; agents map to a tier.
+# The `critic` tier exists so the skeptic and novelty checker can run on a
+# different vendor from the ideators that produced the idea they attack.
+#
+# An empty `model` means "use the run's default provider and model".
+# A value may be a bare model id, or "provider:model" to pin a provider.
+# Environment variables still override everything at request time.
+
+roles:
+  fast:
+    model: ""
+    temperature: 0.2      # scouts, extraction, evidence grading
+  reason:
+    model: ""
+    temperature: 0.4      # framing, gap analysis, judging, synthesis
+  creative:
+    model: ""
+    temperature: 0.9      # ideators, panel personas
+  critic:
+    model: ""
+    temperature: 0.2      # skeptic, novelty checker
+
+agents:
+  # Adversarial roles pin to a separate tier on purpose.
+  skeptic: critic
+  novelty_checker: critic
+  judge: critic
+  red_team: critic
+
+  # Generative roles.
+  ideator: creative
+  analogist: creative
+  panel_persona: creative
+
+  # Mechanical roles.
+  landscape_scout: fast
+  literature_scout: fast
+  evidence_grader: fast
+  classify_intake: fast
+
+  # Everything else defaults to `reason`.
+  orchestrator: reason
+  moderator: reason
+  historian: reason
+  gap_analyst: reason
+  framer: reason
+  abstractor: reason
+  problem_synthesizer: reason
+  ranker: reason
+  experimenter: reason
+  lead: reason
+  subagent-1: reason
+  subagent-2: creative
+  subagent-3: critic
+  citation: fast

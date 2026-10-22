@@ -1,0 +1,747 @@
+/* ── R&D Inception Studio Styling ───────────────────────────── */
+
+.rnd-studio {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-app, #0B0E14);
+  color: var(--text-body, #D1D5DB);
+}
+
+/* ── Top Bar ─────────────────────────────────────────────── */
+
+.rnd-studio__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 24px;
+  background: var(--bg-surface, #121620);
+  border-bottom: 1px solid var(--border-subtle, #202636);
+}
+
+.rnd-studio__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rnd-studio__logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3B82F6;
+}
+
+.rnd-studio__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-title, #F3F4F6);
+  letter-spacing: -0.01em;
+}
+
+.rnd-studio__badge {
+  font-size: 10.5px;
+  font-family: var(--font-mono, monospace);
+  color: #9CA3AF;
+  background: #181E2C;
+  border: 1px solid #202636;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.rnd-studio__status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  color: #9CA3AF;
+  background: #181E2C;
+  border: 1px solid #202636;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.rnd-studio__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+}
+
+/* ── Main Container ───────────────────────────────────────── */
+
+.rnd-studio__main {
+  flex: 1;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
+
+.rnd-studio__hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rnd-studio__headline {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-title, #F3F4F6);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.rnd-studio__subheadline {
+  font-size: 14px;
+  color: var(--text-muted, #9CA3AF);
+  line-height: 1.5;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* ── Form Card ────────────────────────────────────────────── */
+
+.rnd-studio__form {
+  background: var(--bg-surface, #121620);
+  border: 1px solid var(--border-subtle, #202636);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.rnd-studio__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ---------- Intake mode selector ---------- */
+
+.rnd-studio__modes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.rnd-studio__mode {
+  display: flex;
+  padding: 11px 13px;
+  flex-direction: column;
+  gap: 3px;
+  border: 1px solid #26304A;
+  border-radius: 11px;
+  background: #12182A;
+  color: #9CA3AF;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.rnd-studio__mode:hover:not(:disabled) {
+  border-color: #3B4A6B;
+  transform: translateY(-1px);
+}
+
+.rnd-studio__mode strong {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #E8ECF4;
+}
+
+.rnd-studio__mode small {
+  font-size: 11px;
+  line-height: 1.35;
+  color: #64748B;
+}
+
+.rnd-studio__mode--active {
+  border-color: #4FD1B5;
+  background: #142A2A;
+}
+
+.rnd-studio__mode--active strong {
+  color: #4FD1B5;
+}
+
+.rnd-studio__mode:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ---------- Depth and budget controls ---------- */
+
+.rnd-studio__engine-summary--static {
+  padding: 10px 16px;
+  border-bottom: 1px solid #26304A;
+}
+
+.rnd-studio__depth-pills {
+  display: inline-flex;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid #26304A;
+  border-radius: 8px;
+  background: #0E1320;
+}
+
+.rnd-studio__depth-pill {
+  padding: 4px 11px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #64748B;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.rnd-studio__depth-pill:hover:not(:disabled) {
+  color: #E8ECF4;
+}
+
+.rnd-studio__depth-pill--active {
+  background: #1F2840;
+  color: #4FD1B5;
+}
+
+.rnd-studio__budget {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  font-size: 11.5px;
+  color: #9CA3AF;
+}
+
+.rnd-studio__budget-input {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.rnd-studio__budget-input input {
+  width: 58px;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid #26304A;
+  border-radius: 7px;
+  background: #0E1320;
+  color: #E8ECF4;
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+}
+
+.rnd-studio__budget-input input:focus-visible {
+  outline: 2px solid #4FD1B5;
+  outline-offset: 1px;
+}
+
+.rnd-studio__label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rnd-studio__label {
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9CA3AF;
+}
+
+.rnd-studio__hint {
+  font-size: 11px;
+  color: #64748B;
+  font-family: var(--font-mono, monospace);
+}
+
+.rnd-studio__input,
+.rnd-studio__textarea {
+  width: 100%;
+  background: var(--bg-input, #141824);
+  border: 1px solid var(--border-subtle, #202636);
+  border-radius: 8px;
+  padding: 11px 14px;
+  color: var(--text-title, #F3F4F6);
+  font-size: 13.5px;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.rnd-studio__input::placeholder,
+.rnd-studio__textarea::placeholder {
+  color: #64748B;
+  font-size: 13px;
+}
+
+.rnd-studio__input:focus,
+.rnd-studio__textarea:focus,
+.rnd-studio__input:focus-visible,
+.rnd-studio__textarea:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 1px;
+  border-color: #3B82F6;
+  background: #181E2C;
+}
+
+.rnd-studio__textarea {
+  resize: vertical;
+  line-height: 1.5;
+  min-height: 80px;
+}
+
+/* ── Presets Grid ─────────────────────────────────────────── */
+
+.rnd-studio__benchmarks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.rnd-studio__benchmarks-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rnd-studio__presets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .rnd-studio__presets-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rnd-studio__preset-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--bg-input, #141824);
+  border: 1px solid var(--border-subtle, #202636);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.rnd-studio__preset-btn:hover {
+  background: var(--bg-surface-hover, #181E2C);
+  border-color: #323D54;
+  transform: translateY(-1px);
+}
+
+.rnd-studio__preset-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.rnd-studio__preset-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.rnd-studio__preset-domain {
+  font-size: 12px;
+  font-weight: 600;
+  color: #E2E8F0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rnd-studio__preset-category {
+  font-size: 10.5px;
+  color: #64748B;
+}
+
+.rnd-studio__preset-arrow {
+  color: #64748B;
+  flex-shrink: 0;
+}
+
+/* ── Engine Settings Box ──────────────────────────────────── */
+
+.rnd-studio__engine-box {
+  background: rgba(18, 22, 32, 0.7);
+  border: 1px solid #202636;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+.rnd-studio__engine-box:hover {
+  border-color: #2D3748;
+}
+
+.rnd-studio__engine-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #94A3B8;
+  font-size: 12.5px;
+  text-align: left;
+}
+
+.rnd-studio__engine-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rnd-studio__engine-icon {
+  color: #38BDF8;
+}
+
+.rnd-studio__engine-active {
+  color: #F8FAFC;
+  font-weight: 600;
+}
+
+.rnd-studio__engine-model {
+  color: #64748B;
+  font-family: var(--font-mono, monospace);
+  font-size: 11.5px;
+}
+
+.rnd-studio__engine-toggle-icon {
+  color: #64748B;
+}
+
+.rnd-studio__engine-panel {
+  padding: 12px 14px 14px;
+  border-top: 1px solid #1E293B;
+  background: #0E121A;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rnd-studio__engine-providers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.rnd-studio__provider-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #94A3B8;
+  background: #141A26;
+  border: 1px solid #242E42;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.rnd-studio__provider-pill:hover {
+  background: #1C2436;
+  color: #F1F5F9;
+  border-color: #3B82F6;
+}
+
+.rnd-studio__provider-pill--active {
+  background: rgba(59, 130, 246, 0.18);
+  border-color: #3B82F6;
+  color: #60A5FA;
+  font-weight: 600;
+}
+
+.rnd-studio__provider-emoji {
+  font-size: 12px;
+}
+
+.rnd-studio__engine-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .rnd-studio__engine-inputs {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rnd-studio__engine-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rnd-studio__engine-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.rnd-studio__engine-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #94A3B8;
+  letter-spacing: 0.02em;
+}
+
+.rnd-studio__engine-subtext {
+  font-size: 10px;
+  color: #64748B;
+}
+
+.rnd-studio__engine-input {
+  width: 100%;
+  padding: 7px 10px;
+  font-size: 12px;
+  font-family: var(--font-mono, monospace);
+  background: #141822;
+  border: 1px solid #232B3E;
+  border-radius: 6px;
+  color: #E2E8F0;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.rnd-studio__engine-input:focus {
+  border-color: #3B82F6;
+}
+
+/* ── Action Bar ───────────────────────────────────────────── */
+
+.rnd-studio__action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 16px;
+}
+
+.rnd-studio__action-note {
+  font-size: 11.5px;
+  color: #64748B;
+}
+
+.rnd-studio__submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #2563EB;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.rnd-studio__submit-btn:hover:not(:disabled) {
+  background: #1D4ED8;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+}
+
+.rnd-studio__submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rnd-studio__spinner {
+  animation: rnd-spin 1s linear infinite;
+}
+
+@keyframes rnd-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── History Vault ────────────────────────────────────────── */
+
+.rnd-studio__history {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rnd-studio__history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rnd-studio__history-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #9CA3AF;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.rnd-studio__history-count {
+  font-size: 12px;
+  color: #64748B;
+  font-family: var(--font-mono, monospace);
+}
+
+.rnd-studio__history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rnd-studio__history-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--bg-surface, #121620);
+  border: 1px solid var(--border-subtle, #202636);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  gap: 16px;
+}
+
+.rnd-studio__history-card:hover {
+  background: var(--bg-surface-hover, #181E2C);
+  border-color: #323D54;
+  transform: translateX(2px);
+}
+
+.rnd-studio__history-card-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.rnd-studio__history-domain {
+  font-size: 11px;
+  font-weight: 600;
+  color: #38BDF8;
+}
+
+.rnd-studio__history-question {
+  margin: 0;
+  font-size: 13px;
+  color: #E2E8F0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rnd-studio__history-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.rnd-studio__history-time {
+  font-size: 11.5px;
+  color: #64748B;
+  font-family: var(--font-mono, monospace);
+}
+
+.rnd-studio__history-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.rnd-studio__status-dot--green {
+  background: #10B981;
+}
+
+.rnd-studio__history-chevron {
+  color: #64748B;
+}
+
+/* ---------- Narrow phones ---------- */
+
+@media (max-width: 560px) {
+  .rnd-studio__form {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .rnd-studio__modes {
+    grid-template-columns: 1fr;
+  }
+
+  .rnd-studio__presets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rnd-studio__engine-summary--static {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .rnd-studio__budget {
+    margin-left: 0;
+  }
+
+  .rnd-studio__submit-btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+  }
+}
