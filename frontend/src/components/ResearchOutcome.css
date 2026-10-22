@@ -343,6 +343,8 @@
 .rnd-outcome__icon-warn {
   color: #EF4444;
   flex-shrink: 0;
+  /* Sit the icon on the first text line. The list runs to 13px with a 1.5
+     line-height, so the first baseline sits about 4px down. */
   margin-top: 3px;
 }
 

@@ -63,15 +63,16 @@ export const ResearchOutcome: React.FC<ResearchOutcomeProps> = ({
 
   const brainstormedIdeas = run.brainstormed_ideas || forecast?.brainstormed_ideas || []
   const overcomeStrategies = run.overcome_strategies || forecast?.overcome_strategies || []
-  const coreArchitecture = run.core_architecture || forecast?.core_architecture
-  // An empty object is truthy, so the card would render with a blank title and
-  // "0 Primitives". Require actual content before showing the section.
-  const hasArchitecture = Boolean(
-    coreArchitecture &&
-      (coreArchitecture.system_name ||
-        coreArchitecture.flaw_hotspot ||
-        (coreArchitecture.primitives?.length ?? 0) > 0),
-  )
+  // An empty object is truthy, so the architecture card would render with a
+  // blank title and "0 Primitives". Require actual content before showing it.
+  const rawArchitecture = run.core_architecture || forecast?.core_architecture
+  const coreArchitecture =
+    rawArchitecture &&
+    (rawArchitecture.system_name ||
+      rawArchitecture.flaw_hotspot ||
+      (rawArchitecture.primitives?.length ?? 0) > 0)
+      ? rawArchitecture
+      : undefined
   const rankedIdeas = run.ranked_ideas ?? run.ideas ?? []
   const validationResults = run.validation_results ?? []
   const spend = run.spend
@@ -150,7 +151,7 @@ export const ResearchOutcome: React.FC<ResearchOutcomeProps> = ({
       )}
 
       {/* 2B. FIRST-PRINCIPLES BASE CORE ARCHITECTURE DECONSTRUCTION */}
-      {hasArchitecture && (
+      {coreArchitecture && (
         <section className="rnd-outcome__card rnd-outcome__card--arch">
           <div className="rnd-outcome__card-header">
             <div>

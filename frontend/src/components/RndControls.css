@@ -73,7 +73,7 @@
 }
 .vault-header-row {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   gap: 22px;
   padding: 20px 22px 16px;
@@ -215,7 +215,8 @@
 .vault-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(292px, 1fr));
-  gap: 13px;
+  /* Matches the 4px spacing scale used across the app. */
+  gap: 16px;
   padding: 18px 22px;
 }
 .cyber-source-card {

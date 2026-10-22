@@ -281,23 +281,25 @@
 
 /* Speech Card inside Spotlight */
 .meeting-chamber__speech-card {
-  flex: 1;
+  /* The card grows with the speech instead of stretching to fill the
+     spotlight. A one-line statement was floating in a 450px empty box. */
+  flex: 0 1 auto;
   background: #181E2C;
   border: 1px solid #283248;
   border-radius: 12px;
-  padding: 24px;
+  padding: 28px 24px;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 20px;
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .meeting-chamber__speech-quote-icon {
   position: absolute;
-  top: 10px;
-  left: 14px;
+  top: 6px;
+  left: 12px;
   font-size: 38px;
   font-family: serif;
   color: rgba(255, 255, 255, 0.08);
